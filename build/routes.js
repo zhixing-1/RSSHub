@@ -78280,41 +78280,15 @@ export default {
         "categories": [
           "social-media"
         ],
-        "example": "/picuki/profile/linustech",
+        "example": "/picuki/profile/stefaniejoosten",
         "parameters": {
-          "id": "Tiktok user id (without @)",
-          "type": {
-            "description": "Type of profile page",
-            "options": [
-              {
-                "value": "profile",
-                "label": "Profile Page"
-              },
-              {
-                "value": "story",
-                "label": "Story Page"
-              }
-            ],
-            "default": "profile"
-          },
-          "functionalFlag": {
-            "description": "Functional flag for video embedding",
-            "options": [
-              {
-                "value": "0",
-                "label": "Off, only show video poster as an image"
-              },
-              {
-                "value": "1",
-                "label": "On"
-              }
-            ],
-            "default": "1"
-          }
+          "id": "Instagram user id",
+          "type": "Type of profile page (profile or tagged)",
+          "functionalFlag": "functional flag, see the table below\n| functionalFlag | Video embedding                         | Fetching Instagram Stories |\n| -------------- | --------------------------------------- | -------------------------- |\n| 0              | off, only show video poster as an image | off                        |\n| 1 (default)    | on                                      | off                        |\n| 10             | on                                      | on                         |\n"
         },
         "features": {
           "requireConfig": false,
-          "requirePuppeteer": true,
+          "requirePuppeteer": false,
           "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
@@ -78329,9 +78303,9 @@ export default {
           },
           {
             "source": [
-              "www.picuki.com/story/:id"
+              "www.picuki.com/profile-tagged/:id"
             ],
-            "target": "/profile/:id/story"
+            "target": "/profile/:id/tagged"
           }
         ],
         "name": "User Profile - Picuki",
@@ -78341,12 +78315,13 @@ export default {
           "devinmugen",
           "NekoAria"
         ],
+        "description": "\n::: warning\n  Instagram Stories do not have a reliable guid. It is possible that your RSS reader show the same story more than once.\n  Though, every Story expires after 24 hours, so it may be not so serious.\n:::",
         "location": "profile.ts",
         "module": () => import('@/routes/picuki/profile.ts')
       }
     },
-    "name": "TikTok",
-    "url": "tiktok.com",
+    "name": "Instagram",
+    "url": "www.instagram.com",
     "lang": "en"
   },
   "pikabu": {
