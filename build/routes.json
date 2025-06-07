@@ -5828,8 +5828,7 @@
       "/:type": {
         "path": "/:type",
         "categories": [
-          "new-media",
-          "popular"
+          "new-media"
         ],
         "example": "/aeon/essays",
         "parameters": {
@@ -13585,8 +13584,7 @@
       "/user/article/:uid": {
         "path": "/user/article/:uid",
         "categories": [
-          "social-media",
-          "popular"
+          "social-media"
         ],
         "example": "/bilibili/user/article/334958638",
         "parameters": {
@@ -23153,6 +23151,30 @@
         "url": "civitai.com/",
         "location": "models.ts",
         "module": "() => import('@/routes/civitai/models.ts')"
+      },
+      "/user/:username/articles": {
+        "path": "/user/:username/articles",
+        "categories": [
+          "program-update"
+        ],
+        "example": "/civitai/user/Chenkin/articles",
+        "parameters": {
+          "username": "Username"
+        },
+        "radar": [
+          {
+            "source": [
+              "civitai.com/user/:username",
+              "civitai.com/user/:username/articles"
+            ]
+          }
+        ],
+        "name": "User Article",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "location": "user.ts",
+        "module": "() => import('@/routes/civitai/user.ts')"
       }
     },
     "name": "Civitai",
@@ -40922,7 +40944,7 @@
         "example": "/google/search/rss/zh-CN,zh",
         "parameters": {
           "keyword": "Keyword",
-          "language": "Accept-Language. Example: zh-CN,zh;q=0.9,en;q=0.8,ja;q=0.7"
+          "language": "Accept-Language. Example: `zh-CN,zh;q=0.9,en;q=0.8,ja;q=0.7`"
         },
         "features": {
           "requireConfig": false,
@@ -42195,7 +42217,7 @@
         ],
         "example": "/gov/customs/list/paimai",
         "parameters": {
-          "gchannel": "支持 `paimai` 及 `fagui` 2个频道，默认为 `paimai`"
+          "gchannel": "支持 `paimai`, `fagui` 及 `latest` 3 个频道，默认为 `paimai`"
         },
         "features": {
           "requireConfig": false,
@@ -42213,7 +42235,7 @@
             "target": "/customs/list"
           }
         ],
-        "name": "拍卖信息 / 海关法规",
+        "name": "拍卖信息 / 海关法规 / 最新文件",
         "maintainers": [
           "Jeason0228",
           "TonyRL",
@@ -53721,7 +53743,8 @@
           "id": "南方周末频道 id, 可在该频道的 URL 中找到（即 https://www.infzm.com/contents?term_id=:id)"
         },
         "categories": [
-          "traditional-media"
+          "traditional-media",
+          "popular"
         ],
         "example": "/infzm/1",
         "radar": [
@@ -56538,7 +56561,8 @@
       "/:important?": {
         "path": "/:important?",
         "categories": [
-          "finance"
+          "finance",
+          "popular"
         ],
         "view": 5,
         "example": "/jin10",
@@ -99864,7 +99888,8 @@
       "/featured": {
         "path": "/featured",
         "categories": [
-          "new-media"
+          "new-media",
+          "popular"
         ],
         "example": "/thepaper/featured",
         "parameters": {},
@@ -99998,8 +100023,7 @@
       "/:term?": {
         "path": "/:term?",
         "categories": [
-          "new-media",
-          "popular"
+          "new-media"
         ],
         "example": "/thepetcity",
         "parameters": {
@@ -114717,8 +114741,7 @@
       "/top20": {
         "path": "/top20",
         "categories": [
-          "blog",
-          "popular"
+          "blog"
         ],
         "example": "/zhubai/top20",
         "parameters": {},
